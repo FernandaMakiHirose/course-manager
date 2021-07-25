@@ -20,6 +20,9 @@ Para executar o programa vá no Git Bash e digite:
 Para gerar um novo componente:
 >ng generate component component-name
 
+Para abrir o projeto no seu navegador digite:
+>http://localhost:4200/courses
+
 ## Pré-requisitos
 - HTML básico. <br>
 - JavaScript básico. <br>
