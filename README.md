@@ -15,11 +15,11 @@ Para verificar se o pacote do Node.js está instalado:
 >npm -v
 
 ## Pré-requisitos
-HTML básico.
-JavaScript básico.
-Node.js.
-Angular CLI.
-Visual Studio Code.
+- HTML básico. <br>
+- JavaScript básico. <br>
+- Node.js. <br>
+- Angular CLI. <br>
+- Visual Studio Code. <br>
 
 ## Para rodar o programa
 Vá no Git Bash e digite:
