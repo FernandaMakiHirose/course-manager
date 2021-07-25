@@ -24,3 +24,7 @@ Visual Studio Code.
 ## Para rodar o programa
 Vá no Git Bash e digite:
 >ng version
+
+## Curiosidades de pastas
+- Core: é uma pasta que comtêm uma regra de negócio maior, não são tão genéricos, componentes mais pesados e que não podem ser tão compartilhados.
+- Shared: é uma pasta que contêm módulos e componentes muito pequenos que são compartilhados e genéricos que podem ser usadas ou não durente a aplicação. 
