@@ -21,9 +21,12 @@ Para verificar se o pacote do Node.js está instalado:
 - Angular CLI. <br>
 - Visual Studio Code. <br>
 
-## Para rodar o programa
-Vá no Git Bash e digite:
->ng version
+## Comandos
+Para executar o programa vá no Git Bash e digite:
+>ng serve
+
+Para gerar um novo componente:
+>ng generate component component-name
 
 ## Curiosidades de pastas
 - Core: é uma pasta que comtêm uma regra de negócio maior, não são tão genéricos, componentes mais pesados e que não podem ser tão compartilhados.
