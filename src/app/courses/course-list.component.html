@@ -1,15 +1,19 @@
 <h2>Course List</h2>
 
+<!--cria o input que recebe os cursos e um label para filtrá-los-->
 <div class="form-group row">
 
     <label class="col-sm-2 col-form-label">Filter By:</label>
 
     <div class="col-sm-10">
+
+        <!--data biding[(ngModel)]= valor do atributo que quer lincar com o componente-->
         <input [(ngModel)]="filter" class="form-control">
     </div>
 
 </div>
 
+<!--cria a tabela com o bootstrap-->
 <table class="table table-striped">
     <thead>
         <tr>
@@ -23,16 +27,29 @@
         </tr>
     </thead>
     <tbody>
+
+        <!--cria a variável de template-->
         <tr *ngFor="let course of filteredCourses">
+
+            <!--carrega a imagem, precisa ficar entre conchetes [src] porque mescla html com componente-->
             <td><img [src]="course.imageUrl" width="40" height="40" ></td>
+
+            <!--interpolação-->
             <td>{{ course.name }}</td>
             <td>{{ course.price }}</td>
+
+            <!--pipes tem como funcionalidade mudar valores-->
+
+            <!-- pipe do angular de deixar as letras minúsculas e substituir valores: | lowercase | replace: '-': ' '-->
             <td>{{ course.code | lowercase | replace: '-': ' ' }}</td>
+
+            <!--pipe do angular de data: | date: 'dd/MM/yyyy'-->
             <td>{{ course.releaseDate | date: 'dd/MM/yyyy' }}</td>
             <td>
                 <app-star [rating]="course.rating"></app-star>
             </td>
             <td>
+                <!--botão de editar e deletar-->
                 <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-2">Edit</a>
                 <button (click)="deleteById(course.id)" class="btn btn-danger">Delete</button>
             </td>

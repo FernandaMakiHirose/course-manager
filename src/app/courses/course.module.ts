@@ -11,7 +11,7 @@ import { AppPipeModule } from '../shared/pipe/app-pipe.module';
     declarations: [
         CourseListComponent,
         CourseInfoComponent
-    ],
+    ], 
     imports: [
         CommonModule,
         FormsModule,
@@ -27,4 +27,6 @@ import { AppPipeModule } from '../shared/pipe/app-pipe.module';
         ])
     ]
 })
-export class CourseModule {}
+export class CourseModule { 
+
+}

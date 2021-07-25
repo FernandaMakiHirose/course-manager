@@ -3,32 +3,44 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
+// @Injectable = o Angular controla e lida com injeções de dependência 
 @Injectable({
     providedIn: 'root'
 })
+
+
 export class CourseService { 
 
+    // variável criada, a qual armazena o base path do backend
     private coursesUrl: string = 'http://localhost:3100/api/courses';
 
+    // a classe foi adicionada via injeção de dependência
     constructor(private httpClient: HttpClient) { }
 
+    // o httpCliente vai retornar um array de cursos e dentro dos parênteses a url que vai fazer a requisição
     retrieveAll(): Observable<Course[]> {
         return this.httpClient.get<Course[]>(this.coursesUrl);
     }
 
+    // passa o id para o método, o método filtra o array de cursos e retorna um elemento com o id passado
     retrieveById(id: number): Observable<Course> { 
+
+        // faz a requisição e pega o curso específico
         return this.httpClient.get<Course>(`${this.coursesUrl}/${id}`);
     }
 
+    // se tiver um id vai alterar o elemento que corresponde ao id
     save(course: Course): Observable<Course> { 
-        if(course.id) { 
-            return this.httpClient.put<Course>(`${this.coursesUrl}/${course.id}`, course);
+
+        if(course.id) { // se o id do curso estiver preenchido vai chamar o método put no backend
+
+            return this.httpClient.put<Course>(`${this.coursesUrl}/${course.id}`, course); // como é um put precisa passar como parâmetro do método a url e o body da requisição, vai retornar o curso
         } else { 
-            return this.httpClient.post<Course>(`${this.coursesUrl}`, course);
+            return this.httpClient.post<Course>(`${this.coursesUrl}`, course); // caso não tenha id vai dar um post, vai salvar o id
         }
     }
 
+    // deleta o curso
     deleteById(id: number): Observable<any> {
         return this.httpClient.delete<any>(`${this.coursesUrl}/${id}`);
     }

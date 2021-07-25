@@ -2,11 +2,17 @@
 
 <hr/>
 
+<!--#courseForm = variável de template-->
 <form #courseForm="ngForm" *ngIf="course">
 
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Name:</label>    
         <div class="col-sm-10">
+ 
+            <!--[(ngModel)]="course.name" = entra na variável de curso, faz o data biding com o name do curso-->
+            <!--#courseName = variável de template criada-->
+            <!--[ngClass]= podemos passar classes dinâmicas, primeiro se passa a classe e depois a condição-->
+            <!--[ngClass]="{'is-invalid': courseName.invalid}" = só vai adicionar essa classe se o courseName for inválido-->
             <input [(ngModel)]="course.name" required name="name" #courseName="ngModel" [ngClass]="{'is-invalid': courseName.invalid}" class="form-control">
             
             <div class="invalid-feedback">
@@ -15,6 +21,7 @@
         </div>        
     </div>
 
+    <!--mesmas configurações que o Name, com exceção que esse é o Price e foi adicionado o type="number"-->
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Price:</label>    
         <div class="col-sm-10">
@@ -27,6 +34,7 @@
         </div>        
     </div>
 
+    <!--mesmas configurações que o Price, com exceção que esse é o Rating-->
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Rating:</label>    
         <div class="col-sm-10">
@@ -42,6 +50,8 @@
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Description:</label>    
         <div class="col-sm-10">
+
+            <!--adiciona a descrição-->
             <textarea [(ngModel)]="course.description" required name="description" #courseDescription="ngModel" 
                 [ngClass]="{'is-invalid': courseDescription.invalid}" class="form-control"></textarea>
             
@@ -51,6 +61,9 @@
         </div>        
     </div>
 
+    <!--botão para salvar, se o usuário não preencher todos os dados, o botão de enviar vai estar desabilitado-->
     <button [disabled]="courseForm.invalid" (click)="save()" class="btn btn-primary mr-2">Save</button>
+
+    <!--botão para voltar-->
     <button [routerLink]="['/courses']" class="btn btn-secondary">Back</button>
 </form>

@@ -5,12 +5,14 @@ import { Component, OnChanges, Input } from '@angular/core';
     templateUrl: './star.component.html',
     styleUrls: ['./star.component.css']
 })
+
+
 export class StarComponent implements OnChanges { 
 
-    @Input()
+    @Input() 
     rating: number = 0;
 
-    starWidth: number;
+    starWidth: number; 
     
     ngOnChanges(): void { 
         this.starWidth = this.rating * 74 / 5;
