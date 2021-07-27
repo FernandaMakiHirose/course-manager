@@ -30,5 +30,5 @@ Para gerar um novo componente:
 - Visual Studio Code. <br>
 
 ## Curiosidades de pastas
-- Core: é uma pasta que comtêm uma regra de negócio maior, não são tão genéricos, componentes mais pesados e que não podem ser tão compartilhados.
+- Core: é uma pasta que contêm uma regra de negócio maior, não são tão genéricos, componentes mais pesados e que não podem ser tão compartilhados.
 - Shared: é uma pasta que contêm módulos e componentes muito pequenos que são compartilhados e genéricos que podem ser usadas ou não durente a aplicação. 
